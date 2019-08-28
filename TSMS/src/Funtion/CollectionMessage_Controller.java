@@ -7,7 +7,7 @@ import java.util.*;
 
 public class CollectionMessage_Controller implements CollectionFunction{
 	ArrayList <CollectionMessage> clist=new ArrayList<>();
-	public void collection_enter(String ID, String lesson, String teacher, String grade, int count, double price) {
+	public boolean collection_enter(String ID, String lesson, String teacher, String grade, int count, double price) {
 		CollectionMessage cm=new CollectionMessage();
 		cm.setCount(count);
 		cm.setGrade(grade);
@@ -16,10 +16,11 @@ public class CollectionMessage_Controller implements CollectionFunction{
 		cm.setPrice(price);
 		cm.setTeacher(teacher);
 		clist.add(cm);
+		return true;
 	}
 
 	
-	public void check(String name) {
+	public String check(String name) {
 		for(int i=0;i<clist.size();i++)
 		{
 			if(clist.get(i).getTeacher().equals(name)
@@ -27,13 +28,14 @@ public class CollectionMessage_Controller implements CollectionFunction{
 					&&clist.get(i).getID().equals(name)
 					&&clist.get(i).getLesson().equals(name)
 					)
-				System.out.print(clist.get(i).getCount()
+				return clist.get(i).getCount()
 						+"/t"+clist.get(i).getGrade()
 						+"/t"+clist.get(i).getID()
 						+"/t"+clist.get(i).getLesson()
 						+"/t"+clist.get(i).getPrice()
-						+"/t"+clist.get(i).getTeacher());
+						+"/t"+clist.get(i).getTeacher();
 		}
+		return null;
 		
 	}
 

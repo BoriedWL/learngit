@@ -21,11 +21,11 @@ public class SaveMySQL_Books implements SaveFunction{
     static final String USER = "root";
     static final String PASS = "123456";
 	
-	public void Student(StudentMessage s) {}
+	public boolean Student(StudentMessage s) {return false;}
 
-	public void Teacher(TeacherMessage t) {}
+	public boolean Teacher(TeacherMessage t) {return false;}
 
-	public void Books(BookMessage b) {
+	public boolean Books(BookMessage b) {
 		Connection conn = null;
         try{
             Class.forName(JDBC_DRIVER);
@@ -49,9 +49,10 @@ public class SaveMySQL_Books implements SaveFunction{
                 se.printStackTrace();
             }
         }
+        return true;
 	}
 
-	public void Collection(CollectionMessage c) {
+	public boolean Collection(CollectionMessage c) {
 		Connection conn = null;
         try{
             Class.forName(JDBC_DRIVER);
@@ -76,10 +77,11 @@ public class SaveMySQL_Books implements SaveFunction{
                 se.printStackTrace();
             }
         }
+        return true;
 	}
 
 	
-	public void Lesson(LessonMessage l) {
+	public boolean Lesson(LessonMessage l) {
 		Connection conn = null;
         try{
             Class.forName(JDBC_DRIVER);
@@ -102,7 +104,7 @@ public class SaveMySQL_Books implements SaveFunction{
                 se.printStackTrace();
             }
         }
-		
+		return true;
 	}
 
 	

@@ -11,7 +11,7 @@ public class UserMessage_Controller implements UserFunction
 	ArrayList<StudentMessage> std=new ArrayList<>();
 	ArrayList<TeacherMessage> tea=new ArrayList<>();
 	
-	public void StudentMessage_enter(String ID,String name,String sex,String college,String grade) 
+	public boolean StudentMessage_enter(String ID,String name,String sex,String college,String grade) 
 	{
 		StudentMessage student=new StudentMessage();
 		student.setCollege(college);
@@ -20,10 +20,11 @@ public class UserMessage_Controller implements UserFunction
 		student.setName(name);
 		student.setSex(sex);
 		std.add(student);
+		return true;
 	}
 
 	
-	public void TeacherMessage_enter(String ID,String name,String sex,String college,String jurisdiction) 
+	public boolean TeacherMessage_enter(String ID,String name,String sex,String college,String jurisdiction) 
 	{
 		TeacherMessage teacher=new TeacherMessage();
 		teacher.setCollege(college);
@@ -32,6 +33,7 @@ public class UserMessage_Controller implements UserFunction
 		teacher.setName(name);
 		teacher.setSex(sex);
 		tea.add(teacher);
+		return true;
 	}
 
 	public String StudentMessage_inquire(String name) {

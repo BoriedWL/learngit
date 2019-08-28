@@ -6,7 +6,7 @@ import Message.LessonMessage;
 
 public class LessonMessage_Controller implements LessonFunction{
 	ArrayList <LessonMessage> les=new ArrayList<>();
-	public void Lesson_enter(String ID,String name,String type,double credit) 
+	public boolean Lesson_enter(String ID,String name,String type,double credit) 
 	{
 		LessonMessage lesson=new LessonMessage();
 		lesson.setCredit(credit);
@@ -14,6 +14,7 @@ public class LessonMessage_Controller implements LessonFunction{
 		lesson.setName(name);
 		lesson.setType(type);
 		les.add(lesson);
+		return true;
 	}
 
 	public String Lesson_inquire(String name) 

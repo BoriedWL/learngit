@@ -2,8 +2,8 @@ package INTERFACE;
 
 public interface BookFunction {
 	//录入
-	public void BookMessage_enter(String ISBN,String name,String press,String author,double price);			
+	public boolean BookMessage_enter(String ISBN,String name,String press,String author,double price);			
 	public String BookMessage_inquire(String name);			//查询
-	public void BookMessage_alter(String name,String change);			//修改
-	public void CheckBook();					//
+	public boolean BookMessage_alter(String name,String change);			//修改
+	public String CheckBook();					//
 }
