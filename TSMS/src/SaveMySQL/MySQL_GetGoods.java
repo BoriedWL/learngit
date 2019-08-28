@@ -23,7 +23,7 @@ public class MySQL_GetGoods implements MySQL_Getter{
    {
 	   ArrayList <BookMessage> list=new ArrayList<>();
 	   try{
-        Class.forName(JDBC_DRIVER);
+        Class.forName(JDBC_DRIVER);				//JDBCÇý¶¯
         Connection con = DriverManager.getConnection(DB_URL, USER, PASS);
         String sql="SELECT * FROM textbooks;";
         Statement stmt =  con.createStatement();
@@ -60,7 +60,7 @@ public ArrayList GetLesson() {
 	   try{
      Class.forName(JDBC_DRIVER);
      Connection con = DriverManager.getConnection(DB_URL, USER, PASS);
-     String sql="SELECT * FROM textbooks;";
+     String sql="SELECT * FROM lesson;";
      Statement stmt =  con.createStatement();
      ResultSet rs=stmt.executeQuery(sql);
 		while (rs.next()) 
